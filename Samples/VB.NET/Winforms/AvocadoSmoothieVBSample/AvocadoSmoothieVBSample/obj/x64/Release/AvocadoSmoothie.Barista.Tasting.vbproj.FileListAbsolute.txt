@@ -1,0 +1,15 @@
+D:\AvocadoSmoothieSamples\Samples\VB.NET\AvocadoSmoothieVBSample\AvocadoSmoothieVBSample\bin\x64\Release\AvocadoSmoothie.Barista.Tasting.exe.config
+D:\AvocadoSmoothieSamples\Samples\VB.NET\AvocadoSmoothieVBSample\AvocadoSmoothieVBSample\bin\x64\Release\AvocadoSmoothie.Barista.Tasting.exe
+D:\AvocadoSmoothieSamples\Samples\VB.NET\AvocadoSmoothieVBSample\AvocadoSmoothieVBSample\bin\x64\Release\AvocadoSmoothie.Barista.Tasting.pdb
+D:\AvocadoSmoothieSamples\Samples\VB.NET\AvocadoSmoothieVBSample\AvocadoSmoothieVBSample\bin\x64\Release\AvocadoSmoothie.Barista.Tasting.xml
+D:\AvocadoSmoothieSamples\Samples\VB.NET\AvocadoSmoothieVBSample\AvocadoSmoothieVBSample\bin\x64\Release\AvocadoSmoothie.Barista.dll
+D:\AvocadoSmoothieSamples\Samples\VB.NET\AvocadoSmoothieVBSample\AvocadoSmoothieVBSample\bin\x64\Release\AvocadoSmoothie.Barista.xml
+D:\AvocadoSmoothieSamples\Samples\VB.NET\AvocadoSmoothieVBSample\AvocadoSmoothieVBSample\obj\x64\Release\AvocadoSmoothie.Barista.Tasting.vbproj.AssemblyReference.cache
+D:\AvocadoSmoothieSamples\Samples\VB.NET\AvocadoSmoothieVBSample\AvocadoSmoothieVBSample\obj\x64\Release\AvocadoSmoothie.Barista.Tasting.FrmMain.resources
+D:\AvocadoSmoothieSamples\Samples\VB.NET\AvocadoSmoothieVBSample\AvocadoSmoothieVBSample\obj\x64\Release\AvocadoSmoothie.Barista.Tasting.Resources.resources
+D:\AvocadoSmoothieSamples\Samples\VB.NET\AvocadoSmoothieVBSample\AvocadoSmoothieVBSample\obj\x64\Release\AvocadoSmoothie.Barista.Tasting.vbproj.GenerateResource.cache
+D:\AvocadoSmoothieSamples\Samples\VB.NET\AvocadoSmoothieVBSample\AvocadoSmoothieVBSample\obj\x64\Release\AvocadoSmoothie.Barista.Tasting.vbproj.CoreCompileInputs.cache
+D:\AvocadoSmoothieSamples\Samples\VB.NET\AvocadoSmoothieVBSample\AvocadoSmoothieVBSample\obj\x64\Release\AvocadoS.DBBEEEDF.Up2Date
+D:\AvocadoSmoothieSamples\Samples\VB.NET\AvocadoSmoothieVBSample\AvocadoSmoothieVBSample\obj\x64\Release\AvocadoSmoothie.Barista.Tasting.exe
+D:\AvocadoSmoothieSamples\Samples\VB.NET\AvocadoSmoothieVBSample\AvocadoSmoothieVBSample\obj\x64\Release\AvocadoSmoothie.Barista.Tasting.xml
+D:\AvocadoSmoothieSamples\Samples\VB.NET\AvocadoSmoothieVBSample\AvocadoSmoothieVBSample\obj\x64\Release\AvocadoSmoothie.Barista.Tasting.pdb
