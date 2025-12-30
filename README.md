@@ -133,16 +133,12 @@ Add a reference to `AvocadoSmoothie.Barista` in your .NET Framework 4.8 project.
 ## Further Reading
 
 - See the [doc/AvocadoSmoothie_API_Documentation.xml](doc/AvocadoSmoothie_API_Documentation.xml) for full API details.
-- Explore `frmMain.cs` and `frmMain.Designer.cs` for practical usage patterns and UI integration.
+- Explore `FrmMain.cs` and `FrmMain.Designer.cs` for practical usage patterns and UI integration.
 
 ---
 
 **AvocadoSmoothie.Barista** : Brew clarity from noisy data.  
 **AvocadoSmoothie.Barista.Tasting** : Taste, iterate, and dial in (fine-tune) your recipe.
-
-
-
-
 
 
 
