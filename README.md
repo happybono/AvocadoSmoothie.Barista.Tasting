@@ -115,7 +115,7 @@ await ExcelBrewService.ExcelCustomOrder(ticket);
 
 
 > Both export features include the original and all selected smoothing results in the output file.  
-> For parameter details, see the [docs/AvocadoSmoothie_API_Documentation.xml](docs/AvocadoSmoothie_API_Documentation.xml).
+> For parameter details, see the [docs/AvocadoSmoothie_API_Documentation.xml](doc/AvocadoSmoothie_API_Documentation.xml).
 
 ### 7. Advanced : Boundary Handling
 
@@ -132,13 +132,14 @@ Add a reference to `AvocadoSmoothie.Barista` in your .NET Framework 4.8 project.
 
 ## Further Reading
 
-- See the [docs/AvocadoSmoothie_API_Documentation.xml](docs/AvocadoSmoothie_API_Documentation.xml) for full API details.
+- See the [docs/AvocadoSmoothie_API_Documentation.xml](doc/AvocadoSmoothie_API_Documentation.xml) for full API details.
 - Explore `frmMain.cs` and `frmMain.Designer.cs` for practical usage patterns and UI integration.
 
 ---
 
 **AvocadoSmoothie.Barista** : Brew clarity from noisy data.  
 **AvocadoSmoothie.Barista.Tasting** : Taste, iterate, and dial in (fine-tune) your recipe.
+
 
 
 
