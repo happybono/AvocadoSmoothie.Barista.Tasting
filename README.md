@@ -6,7 +6,7 @@ A .NET Framework 4.8 sample app (C# & VB.NET) built on **AvocadoSmoothie.Barista
 ## AvocadoSmoothie.Barista & AvocadoSmoothie.Barista.Tasting
 ### Naming Philosophy
 
-**AvocadoSmoothie.Barista** is a C# / .NET library for robust running median smoothing and export utilities, designed to help you "craft" your data with the care of a skilled barista. The name "Barista" reflects the library's purpose : to blend, refine, and serve data with precision and clarity.
+[**AvocadoSmoothie.Barista**](https://www.nuget.org/packages/AvocadoSmoothie.Barista) is a VB.NET / .NET library for robust running median smoothing and export utilities, designed to help you "craft" your data with the care of a skilled barista. The name "Barista" reflects the library's purpose : to blend, refine, and serve data with precision and clarity.
 
 
 **AvocadoSmoothie.Barista.Tasting** is the companion sample application - a "tasting" session for your data.
@@ -139,6 +139,7 @@ Add a reference to `AvocadoSmoothie.Barista` in your .NET Framework 4.8 project.
 
 **AvocadoSmoothie.Barista** : Brew clarity from noisy data.  
 **AvocadoSmoothie.Barista.Tasting** : Taste, iterate, and dial in (fine-tune) your recipe.
+
 
 
 
