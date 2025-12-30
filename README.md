@@ -1,5 +1,5 @@
 # AvocadoSmoothie.Barista.Tasting
-A .NET Framework 4.8 sample app (C# & VB.NET) built on **AvocadoSmoothie.Barista**, a deep‑dive running‑median smoothing and export toolkit (MiddleMedian / AllMedian, boundary modes, CSV / Excel workflows).
+A .NET Framework 4.8 sample app (C# & VB.NET) built on **AvocadoSmoothie.Barista**, a deep‑dive running‑median smoothing and export toolkit (MiddleMedian / AllMedian, boundary modes, CSV / Excel workflows).  
 **AvocadoSmoothie.Barista.Tasting** is your tasting room : dial in the "recipe," iterate on parameters, and learn the library's behavior hands-on - so you can confidently brew your own production-ready data processing.
 
 
@@ -139,6 +139,7 @@ Add a reference to `AvocadoSmoothie.Barista` in your .NET Framework 4.8 project.
 
 **AvocadoSmoothie.Barista** : Brew clarity from noisy data.  
 **AvocadoSmoothie.Barista.Tasting** : Taste, iterate, and dial in (fine-tune) your recipe.
+
 
 
 
