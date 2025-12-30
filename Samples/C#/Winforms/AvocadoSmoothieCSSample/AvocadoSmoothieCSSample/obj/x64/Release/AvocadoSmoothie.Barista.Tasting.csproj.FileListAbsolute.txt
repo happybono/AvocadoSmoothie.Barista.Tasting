@@ -1,0 +1,13 @@
+D:\AvocadoSmoothieSamples\Samples\C#\Winforms\AvocadoSmoothieCSSample\AvocadoSmoothieCSSample\bin\x64\Release\AvocadoSmoothie.Barista.Tasting.exe.config
+D:\AvocadoSmoothieSamples\Samples\C#\Winforms\AvocadoSmoothieCSSample\AvocadoSmoothieCSSample\bin\x64\Release\AvocadoSmoothie.Barista.Tasting.exe
+D:\AvocadoSmoothieSamples\Samples\C#\Winforms\AvocadoSmoothieCSSample\AvocadoSmoothieCSSample\bin\x64\Release\AvocadoSmoothie.Barista.Tasting.pdb
+D:\AvocadoSmoothieSamples\Samples\C#\Winforms\AvocadoSmoothieCSSample\AvocadoSmoothieCSSample\bin\x64\Release\AvocadoSmoothie.Barista.dll
+D:\AvocadoSmoothieSamples\Samples\C#\Winforms\AvocadoSmoothieCSSample\AvocadoSmoothieCSSample\bin\x64\Release\AvocadoSmoothie.Barista.xml
+D:\AvocadoSmoothieSamples\Samples\C#\Winforms\AvocadoSmoothieCSSample\AvocadoSmoothieCSSample\obj\x64\Release\AvocadoSmoothie.Barista.Tasting.csproj.AssemblyReference.cache
+D:\AvocadoSmoothieSamples\Samples\C#\Winforms\AvocadoSmoothieCSSample\AvocadoSmoothieCSSample\obj\x64\Release\AvocadoSmoothie.Barista.Tasting.FrmMain.resources
+D:\AvocadoSmoothieSamples\Samples\C#\Winforms\AvocadoSmoothieCSSample\AvocadoSmoothieCSSample\obj\x64\Release\AvocadoSmoothie.Barista.Tasting.Properties.Resources.resources
+D:\AvocadoSmoothieSamples\Samples\C#\Winforms\AvocadoSmoothieCSSample\AvocadoSmoothieCSSample\obj\x64\Release\AvocadoSmoothie.Barista.Tasting.csproj.GenerateResource.cache
+D:\AvocadoSmoothieSamples\Samples\C#\Winforms\AvocadoSmoothieCSSample\AvocadoSmoothieCSSample\obj\x64\Release\AvocadoSmoothie.Barista.Tasting.csproj.CoreCompileInputs.cache
+D:\AvocadoSmoothieSamples\Samples\C#\Winforms\AvocadoSmoothieCSSample\AvocadoSmoothieCSSample\obj\x64\Release\AvocadoS.DDB1ED6A.Up2Date
+D:\AvocadoSmoothieSamples\Samples\C#\Winforms\AvocadoSmoothieCSSample\AvocadoSmoothieCSSample\obj\x64\Release\AvocadoSmoothie.Barista.Tasting.exe
+D:\AvocadoSmoothieSamples\Samples\C#\Winforms\AvocadoSmoothieCSSample\AvocadoSmoothieCSSample\obj\x64\Release\AvocadoSmoothie.Barista.Tasting.pdb
