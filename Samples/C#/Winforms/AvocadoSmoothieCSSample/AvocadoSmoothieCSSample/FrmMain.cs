@@ -49,11 +49,11 @@ namespace AvocadoSmoothie.Barista.Tasting
 
         private void UpdateParameterControls()
         {
-            // BoundaryMode: AllMedian만 활성화
+            // BoundaryMode: Enable AllMedian only
             cbxBoundaryMode.Enabled = chkAllMedian.Checked;
             lblBoundaryMode.Enabled = chkAllMedian.Checked;
 
-            // BorderCount: MiddleMedian만 활성화
+            // BoundaryMode: Enable AllMedian only
             updBorderCnt.Enabled = chkMiddleMedian.Checked;
             lblBorderCnt.Enabled = chkMiddleMedian.Checked;
         }
@@ -525,4 +525,5 @@ namespace AvocadoSmoothie.Barista.Tasting
             return cleaned;
         }
     }
+
 }
