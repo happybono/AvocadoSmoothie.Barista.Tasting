@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnExport = new System.Windows.Forms.Button();
+            this.lblKernelRadius = new System.Windows.Forms.Label();
+            this.btnExcelExport = new System.Windows.Forms.Button();
             this.updRadius = new System.Windows.Forms.NumericUpDown();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.slblStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbSmoothingMethods = new System.Windows.Forms.GroupBox();
             this.chkMiddleMedian = new System.Windows.Forms.CheckBox();
             this.chkAllMedian = new System.Windows.Forms.CheckBox();
             this.txtInit = new System.Windows.Forms.TextBox();
@@ -42,7 +42,7 @@
             this.lblBorderCnt = new System.Windows.Forms.Label();
             this.updBorderCnt = new System.Windows.Forms.NumericUpDown();
             this.btnCSVExport = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbParameters = new System.Windows.Forms.GroupBox();
             this.lblBoundaryMode = new System.Windows.Forms.Label();
             this.cbxBoundaryMode = new System.Windows.Forms.ComboBox();
             this.gbInitData = new System.Windows.Forms.GroupBox();
@@ -51,33 +51,33 @@
             this.lblTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.updRadius)).BeginInit();
             this.statusStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbSmoothingMethods.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updBorderCnt)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.gbParameters.SuspendLayout();
             this.gbInitData.SuspendLayout();
             this.gbRefData.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label2
+            // lblKernelRadius
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
-            this.label2.Location = new System.Drawing.Point(18, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 19);
-            this.label2.TabIndex = 53;
-            this.label2.Text = "Kernel Radius";
+            this.lblKernelRadius.AutoSize = true;
+            this.lblKernelRadius.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
+            this.lblKernelRadius.Location = new System.Drawing.Point(18, 71);
+            this.lblKernelRadius.Name = "lblKernelRadius";
+            this.lblKernelRadius.Size = new System.Drawing.Size(90, 19);
+            this.lblKernelRadius.TabIndex = 53;
+            this.lblKernelRadius.Text = "Kernel Radius";
             // 
-            // btnExport
+            // btnExcelExport
             // 
-            this.btnExport.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
-            this.btnExport.Location = new System.Drawing.Point(691, 548);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(177, 32);
-            this.btnExport.TabIndex = 50;
-            this.btnExport.Text = "Export to Excel";
-            this.btnExport.UseVisualStyleBackColor = true;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            this.btnExcelExport.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
+            this.btnExcelExport.Location = new System.Drawing.Point(691, 548);
+            this.btnExcelExport.Name = "btnExcelExport";
+            this.btnExcelExport.Size = new System.Drawing.Size(177, 32);
+            this.btnExcelExport.TabIndex = 50;
+            this.btnExcelExport.Text = "Export to Excel";
+            this.btnExcelExport.UseVisualStyleBackColor = true;
+            this.btnExcelExport.Click += new System.EventHandler(this.btnExcelExport_Click);
             // 
             // updRadius
             // 
@@ -123,17 +123,17 @@
             this.slblStatus.Size = new System.Drawing.Size(44, 19);
             this.slblStatus.Text = "Ready";
             // 
-            // groupBox1
+            // gbSmoothingMethods
             // 
-            this.groupBox1.Controls.Add(this.chkMiddleMedian);
-            this.groupBox1.Controls.Add(this.chkAllMedian);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(38, 61);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(304, 229);
-            this.groupBox1.TabIndex = 45;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Smoothing Methods";
+            this.gbSmoothingMethods.Controls.Add(this.chkMiddleMedian);
+            this.gbSmoothingMethods.Controls.Add(this.chkAllMedian);
+            this.gbSmoothingMethods.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold);
+            this.gbSmoothingMethods.Location = new System.Drawing.Point(38, 61);
+            this.gbSmoothingMethods.Name = "gbSmoothingMethods";
+            this.gbSmoothingMethods.Size = new System.Drawing.Size(304, 229);
+            this.gbSmoothingMethods.TabIndex = 45;
+            this.gbSmoothingMethods.TabStop = false;
+            this.gbSmoothingMethods.Text = "Smoothing Methods";
             // 
             // chkMiddleMedian
             // 
@@ -224,21 +224,21 @@
             this.btnCSVExport.UseVisualStyleBackColor = true;
             this.btnCSVExport.Click += new System.EventHandler(this.btnCSVExport_Click);
             // 
-            // groupBox2
+            // gbParameters
             // 
-            this.groupBox2.Controls.Add(this.lblBoundaryMode);
-            this.groupBox2.Controls.Add(this.cbxBoundaryMode);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.updRadius);
-            this.groupBox2.Controls.Add(this.lblBorderCnt);
-            this.groupBox2.Controls.Add(this.updBorderCnt);
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F);
-            this.groupBox2.Location = new System.Drawing.Point(38, 303);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(304, 229);
-            this.groupBox2.TabIndex = 57;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Smoothing Parameters";
+            this.gbParameters.Controls.Add(this.lblBoundaryMode);
+            this.gbParameters.Controls.Add(this.cbxBoundaryMode);
+            this.gbParameters.Controls.Add(this.lblKernelRadius);
+            this.gbParameters.Controls.Add(this.updRadius);
+            this.gbParameters.Controls.Add(this.lblBorderCnt);
+            this.gbParameters.Controls.Add(this.updBorderCnt);
+            this.gbParameters.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F);
+            this.gbParameters.Location = new System.Drawing.Point(38, 303);
+            this.gbParameters.Name = "gbParameters";
+            this.gbParameters.Size = new System.Drawing.Size(304, 229);
+            this.gbParameters.TabIndex = 57;
+            this.gbParameters.TabStop = false;
+            this.gbParameters.Text = "Smoothing Parameters";
             // 
             // lblBoundaryMode
             // 
@@ -316,11 +316,11 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.gbRefData);
             this.Controls.Add(this.gbInitData);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gbParameters);
             this.Controls.Add(this.btnCSVExport);
-            this.Controls.Add(this.btnExport);
+            this.Controls.Add(this.btnExcelExport);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbSmoothingMethods);
             this.Controls.Add(this.btnStart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -332,11 +332,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.updRadius)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbSmoothingMethods.ResumeLayout(false);
+            this.gbSmoothingMethods.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updBorderCnt)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbParameters.ResumeLayout(false);
+            this.gbParameters.PerformLayout();
             this.gbInitData.ResumeLayout(false);
             this.gbInitData.PerformLayout();
             this.gbRefData.ResumeLayout(false);
@@ -347,12 +347,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.Label lblKernelRadius;
+        private System.Windows.Forms.Button btnExcelExport;
         private System.Windows.Forms.NumericUpDown updRadius;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel slblStatus;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbSmoothingMethods;
         private System.Windows.Forms.CheckBox chkMiddleMedian;
         private System.Windows.Forms.CheckBox chkAllMedian;
         private System.Windows.Forms.TextBox txtInit;
@@ -360,7 +360,7 @@
         private System.Windows.Forms.Label lblBorderCnt;
         private System.Windows.Forms.NumericUpDown updBorderCnt;
         private System.Windows.Forms.Button btnCSVExport;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbParameters;
         private System.Windows.Forms.Label lblBoundaryMode;
         private System.Windows.Forms.ComboBox cbxBoundaryMode;
         private System.Windows.Forms.GroupBox gbInitData;

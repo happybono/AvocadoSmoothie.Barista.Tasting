@@ -210,7 +210,7 @@ namespace AvocadoSmoothie.Barista.Tasting
             }
         }
 
-        private async void btnExport_Click(object sender, EventArgs e)
+        private async void btnExcelExport_Click(object sender, EventArgs e)
         {
             CancellationTokenSource cts = null;
             try
@@ -385,7 +385,7 @@ namespace AvocadoSmoothie.Barista.Tasting
         {
             this.UseWaitCursor = busy;
             btnStart.Enabled = !busy;
-            btnExport.Enabled = !busy;
+            btnExcelExport.Enabled = !busy;
             updRadius.Enabled = !busy;
             updBorderCnt.Enabled = !busy;
             chkMiddleMedian.Enabled = !busy;
@@ -525,7 +525,4 @@ namespace AvocadoSmoothie.Barista.Tasting
             return cleaned;
         }
     }
-
 }
-
-
