@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>AvocadoSmoothie.Barista</name>
+  </assembly>
+  <members>
+
+    <!-- ====================== Types ====================== -->
+	  <member name="T:AvocadoSmoothie.Barista.SignatureMedian">
+		  <summary>
+			  Running median smoothing utilities for numerical sequences. Provides running median computation.
+		  </summary>
+		  <remarks>
+			  ComputeMedians performs a sliding-window median over the input with either MiddleMedian behavior (preserving borders) or AllMedian (applies to the entire sequence).
+			  The parameter named 'kernelWidth' in ComputeMedians represents the window size W (≥ 1; odd recommended). A convenience overload ComputeMediansByRadius accepts a true radius R and converts it to W = (2 × R) + 1 before delegating.
+			  When useMiddle = false (AllMedian), boundary handling can be customized via SignatureMedian.BoundaryMode (Symmetric, Replicate, ZeroPad, Adaptive).
+		  </remarks>
+	  </member>
+
+    <member name="T:AvocadoSmoothie.Barista.CsvOrderTicket">
+      <summary>
+        Request DTO for CSV export.
+      </summary>
+      <remarks>
+        Use Validate() prior to calling CsvBrewService.ExportCsvAsync(CsvOrderTicket) to ensure the request is consistent and points to a writable location.
+      </remarks>
+    </member>
+
+	  <member name="T:AvocadoSmoothie.Barista.CsvBrewService">
+		  <summary>
+			  CSV export service. Produces one or more CSV files containing Initial, MiddleMedian, and AllMedian values.
+		  </summary>
+		  <remarks>
+			  The service splits outputs to multiple files if the row count would exceed Excel's row limit. Progress is reported both from median computation and from file writing.
+			  CSV headers include a "Boundary Mode" line describing the AllMedian boundary handling.
+		  </remarks>
+	  </member>
+
+    <member name="T:AvocadoSmoothie.Barista.ExcelOrderTicket">
+      <summary>
+        Request DTO for Excel export.
+      </summary>
+      <remarks>
+        Use ValidateBasic() prior to calling ExcelBrewService.ExcelCustomOrder to ensure parameters are valid.
+      </remarks>
+    </member>
+
+    <member name="T:AvocadoSmoothie.Barista.ExcelBrewService">
+      <summary>
+        Excel export service. Builds a workbook with Initial, MiddleMedian, and AllMedian columns and a line chart.
+      </summary>
+      <remarks>
+        - On .NET Framework (NET48), uses strongly-typed Microsoft Office Interop.
+        - On .NET Standard, uses late-binding COM and requires Windows with Microsoft Excel installed.
+        The method opens Excel and presents the generated workbook to the user.
+      </remarks>
+    </member>
+
+    <!-- ====================== SignatureMedian ====================== -->
+	  <member name="M:AvocadoSmoothie.Barista.SignatureMedian.ComputeMediansByRadius(System.Collections.Generic.List{System.Double}, System.Boolean, System.Int32, System.Int32, System.IProgress{System.Int32}, AvocadoSmoothie.Barista.SignatureMedian.BoundaryMode)">
+		  <summary>
+			  Computes running medians using a radius R by converting to an odd window width W = (2 × R) + 1 and delegating to ComputeMedians.
+		  </summary>
+		  <param name="input">Input data (List&lt;Double&gt;). Must not be null.</param>
+		  <param name="useMiddle">True for MiddleMedian; False for AllMedian.</param>
+		  <param name="kernelRadius">Non-negative radius R.</param>
+		  <param name="borderCount">Number of border elements to keep unchanged when useMiddle = true.</param>
+		  <param name="progress">Optional progress reporter (processed element counts).</param>
+		  <param name="boundaryMode">Boundary handling used when useMiddle = false. Ignored when useMiddle = true.</param>
+		  <returns>List&lt;Double&gt; of smoothed values.</returns>
+		  <remarks>
+			  Validates kernelRadius (≥ 0) and checks for overflow when computing W. Delegates to ComputeMedians with kernelWidth := W.
+		  </remarks>
+		  <exception cref="System.ArgumentNullException">Thrown if input is null.</exception>
+		  <exception cref="System.ArgumentOutOfRangeException">Thrown if kernelRadius &lt; 0 or too large.</exception>
+	  </member>
+
+	  <member name="M:AvocadoSmoothie.Barista.SignatureMedian.ComputeMedians(System.Collections.Generic.List{System.Double}, System.Boolean, System.Int32, System.Int32, System.IProgress{System.Int32}, AvocadoSmoothie.Barista.SignatureMedian.BoundaryMode)">
+		  <summary>
+			  Computes running medians (MiddleMedian if useMiddle = true; AllMedian if useMiddle = false) over the input.
+		  </summary>
+		  <param name="input">Input data (List&lt;Double&gt;). Must not be null.</param>
+		  <param name="useMiddle">True for MiddleMedian (preserves borderCount elements on both ends); False for AllMedian.</param>
+		  <param name="kernelWidth">Median window size W (≥ 1). Odd recommended; even widths are accepted (median = average of two middle values).</param>
+		  <param name="borderCount">Number of border elements to keep unchanged when useMiddle = true. Ignored when useMiddle = false.</param>
+		  <param name="progress">Optional progress reporter receiving the count of processed elements (0 … N).</param>
+		  <param name="boundaryMode">Boundary handling used when useMiddle = false: Symmetric (default), Replicate, ZeroPad, or Adaptive. Ignored when useMiddle = true.</param>
+		  <returns>List&lt;Double&gt; containing the smoothed values for each input element.</returns>
+		  <remarks>
+			  - For MiddleMedian, the first and last 'borderCount' values are copied from input; a clamped, variable-length window is used near edges.
+			  - For AllMedian, a fixed-length window uses the specified boundary mode to synthesize out-of-range samples; Adaptive slides the window fully inside the range.
+			  - Uses Parallel.For internally; progress reports are based on processed element counts (not percentages).
+		  </remarks>
+		  <exception cref="System.ArgumentNullException">
+			  Thrown if input is null.
+		  </exception>
+		  <exception cref="System.ArgumentOutOfRangeException">
+			  Thrown if kernelWidth &lt;= 0.
+		  </exception>
+	  </member>
+
+	  <!-- ====================== SignatureMedian.BoundaryMode ====================== -->
+	  <member name="T:AvocadoSmoothie.Barista.SignatureMedian.BoundaryMode">
+		  <summary>
+			  Boundary handling strategies for AllMedian smoothing near the sequence edges.
+		  </summary>
+		  <remarks>
+			  Applied only when useMiddle = false (AllMedian). MiddleMedian ignores BoundaryMode and uses a clamped, variable-length window.
+		  </remarks>
+	  </member>
+	  <member name="F:AvocadoSmoothie.Barista.SignatureMedian.BoundaryMode.Symmetric">
+		  <summary>Periodic reflection at the edges (smoothest default).</summary>
+	  </member>
+	  <member name="F:AvocadoSmoothie.Barista.SignatureMedian.BoundaryMode.Replicate">
+		  <summary>Clamp to the nearest edge value.</summary>
+	  </member>
+	  <member name="F:AvocadoSmoothie.Barista.SignatureMedian.BoundaryMode.ZeroPad">
+		  <summary>Use zeros for out-of-range samples.</summary>
+	  </member>
+	  <member name="F:AvocadoSmoothie.Barista.SignatureMedian.BoundaryMode.Adaptive">
+		  <summary>Slide a full window inside the valid range; no synthetic samples.</summary>
+	  </member>
+
+	  <!-- ====================== IngredientRatioValidator ====================== -->	  
+	  <member name="T:AvocadoSmoothie.Barista.IngredientRatioValidator">
+		  <summary>
+			  Centralized validation utilities and canonical messages for AvocadoSmoothie.Barista.
+		  </summary>
+		  <remarks>
+			  Provides argument validation for CSV / Excel export and smoothing-parameter checks, plus helper utilities for UI scenarios.
+		  </remarks>
+	  </member>
+
+	  <member name="M:AvocadoSmoothie.Barista.IngredientRatioValidator.ThrowIfInvalidBasicForCsv(System.Collections.Generic.IList{System.Double},System.String,System.Int32,System.Int32,System.String)">
+		  <summary>
+			  Validates basic CSV parameters (data, title, radius, border, base path).
+		  </summary>
+		  <param name="initialData">Original numeric data.</param>
+		  <param name="datasetTitle">Dataset title.</param>
+		  <param name="kernelRadius">Smoothing radius R (&gt; 0 required).</param>
+		  <param name="borderCount">Border count (must be ≥ 0).</param>
+		  <param name="basePath">Destination file path (non-empty).</param>
+		  <exception cref="System.ArgumentException">Thrown if data is empty, title is missing, or basePath is missing.</exception>
+		  <exception cref="System.ArgumentOutOfRangeException">Thrown if kernelRadius ≤ 0 or borderCount &lt; 0.</exception>
+	  </member>
+
+	  <member name="M:AvocadoSmoothie.Barista.IngredientRatioValidator.ThrowIfInvalidBasicForExcel(System.Collections.Generic.IList{System.Double},System.String,System.Int32,System.Int32)">
+		  <summary>
+			  Validates basic Excel parameters (data, title, radius, border).
+		  </summary>
+		  <param name="initialData">Original numeric data.</param>
+		  <param name="datasetTitle">Worksheet / chart title.</param>
+		  <param name="kernelRadius">Smoothing radius R (&gt; 0 required).</param>
+		  <param name="borderCount">Border count (must be ≥ 0).</param>
+		  <exception cref="System.ArgumentException">Thrown if data is empty or title is missing.</exception>
+		  <exception cref="System.ArgumentOutOfRangeException">Thrown if kernelRadius ≤ 0 or borderCount &lt; 0.</exception>
+	  </member>
+
+	  <member name="M:AvocadoSmoothie.Barista.IngredientRatioValidator.ThrowIfInvalidSmoothingParameters(System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)">
+		  <summary>
+			  Validates smoothing parameters relative to the data size.
+		  </summary>
+		  <param name="dataCount">Number of data points.</param>
+		  <param name="windowSize">Window width W (≥ 1); typically W = 2 × R + 1.</param>
+		  <param name="radius">Radius R (for diagnostics).</param>
+		  <param name="borderCount">Border count.</param>
+		  <param name="useMiddle">True when validating MiddleMedian constraints.</param>
+		  <remarks>
+			  Enforces : windowSize ≤ dataCount; borderCount ≤ dataCount; and when useMiddle=True, 2 × borderCount &lt; windowSize.
+		  </remarks>
+		  <exception cref="System.ArgumentOutOfRangeException">Thrown if basic arguments are out of range (negative counts or non-positive window).</exception>
+		  <exception cref="System.InvalidOperationException">Thrown when constraints are violated (window too large, border too large for data, or border width too large for Middle).</exception>
+	  </member>
+
+	  <member name="M:AvocadoSmoothie.Barista.IngredientRatioValidator.KernelWidthFromRadius(System.Int32)">
+		  <summary>
+			  Computes the odd window width W = (2 × radius) + 1 with overflow protection.
+		  </summary>
+		  <param name="radius">Radius R.</param>
+		  <returns>Computed odd window width W.</returns>
+		  <exception cref="System.ArgumentOutOfRangeException">Thrown if radius is too large to compute W within Int32.</exception>
+	  </member>
+
+	  <member name="T:AvocadoSmoothie.Barista.IngredientRatioValidator.MessageOnceGate">
+		  <summary>
+			  Show-once gate to avoid duplicate message prompts in UI flows within a brief time window.
+		  </summary>
+	  </member>
+
+	  <member name="M:AvocadoSmoothie.Barista.IngredientRatioValidator.MessageOnceGate.TryEnter(System.String,System.Int32)">
+		  <summary>
+			  Attempts to enter a message gate; returns False if an identical message was recently shown.
+		  </summary>
+		  <param name="message">Message key to gate.</param>
+		  <param name="holdMillis">Hold duration in milliseconds (default 2000).</param>
+		  <returns>True if the caller may show the message; False if suppressed.</returns>
+	  </member>
+	  
+    <!-- ====================== CsvOrderTicket ====================== -->
+    <member name="P:AvocadoSmoothie.Barista.CsvOrderTicket.InitialData">
+      <summary>
+        Original numeric data to be exported.
+      </summary>
+    </member>
+
+    <member name="P:AvocadoSmoothie.Barista.CsvOrderTicket.DatasetTitle">
+      <summary>
+        Human-readable dataset title. Appears in the CSV header.
+      </summary>
+    </member>
+
+    <member name="P:AvocadoSmoothie.Barista.CsvOrderTicket.KernelRadius">
+      <summary>
+        Kernel radius R. Actual median window size W is computed as W = (2 × R) + 1.
+      </summary>
+    </member>
+
+	<member name="P:AvocadoSmoothie.Barista.CsvOrderTicket.BoundaryMode">
+	  <summary>
+	    Boundary handling to use for AllMedian; recorded in the CSV header. Ignored by MiddleMedian.
+	  </summary>
+    </member>
+	  
+    <member name="P:AvocadoSmoothie.Barista.CsvOrderTicket.BorderCount">
+      <summary>
+        Border count used by the MiddleMedian calculation to preserve edge values.
+      </summary>
+    </member>
+
+    <member name="P:AvocadoSmoothie.Barista.CsvOrderTicket.BasePath">
+      <summary>
+        Destination base file path chosen by the user (e.g., from a SaveFileDialog). If multiple parts are generated, an index is appended.
+      </summary>
+    </member>
+
+    <member name="P:AvocadoSmoothie.Barista.CsvOrderTicket.CancellationToken">
+      <summary>
+        Cancellation token to abort the export operation.
+      </summary>
+    </member>
+
+    <member name="P:AvocadoSmoothie.Barista.CsvOrderTicket.Progress">
+      <summary>
+        Optional progress reporter that will receive progress notifications from median computation and file writing.
+      </summary>
+    </member>
+
+    <member name="M:AvocadoSmoothie.Barista.CsvOrderTicket.Validate">
+      <summary>
+        Validates the CSV export request for consistency and environment readiness.
+      </summary>
+      <remarks>
+        Ensures data presence, title, radius &gt; 0, non-negative border count, and that the directory portion of BasePath exists.
+      </remarks>
+      <exception cref="System.ArgumentException">
+        Thrown if InitialData is empty, DatasetTitle is missing, or BasePath is missing.
+      </exception>
+      <exception cref="System.ArgumentOutOfRangeException">
+        Thrown if KernelRadius &lt;= 0 or BorderCount &lt; 0.
+      </exception>
+      <exception cref="System.IO.DirectoryNotFoundException">
+        Thrown if the directory part of BasePath does not exist.
+      </exception>
+    </member>
+
+    <!-- ====================== CsvBrewService ====================== -->
+	  <member name="M:AvocadoSmoothie.Barista.CsvBrewService.ExportCsvAsync(AvocadoSmoothie.Barista.CsvOrderTicket)">
+		  <summary>
+			  Exports CSV files using a CsvOrderTicket. Validates the request and delegates to the core overload.
+		  </summary>
+		  <param name="request">CSV export request containing data, parameters, and destination.</param>
+		  <returns>Task producing a List&lt;String&gt; of full file paths to the created CSV files.</returns>
+		  <remarks>
+			  Passes BoundaryMode from the CsvOrderTicket to the core ExportCsvAsync overload.
+		  </remarks>
+		  <exception cref="System.ArgumentNullException">
+			  Thrown if request is null.
+		  </exception>
+		  <exception cref="System.ArgumentException">
+			  Thrown by request.Validate() if required fields are missing or invalid.
+		  </exception>
+		  <exception cref="System.IO.DirectoryNotFoundException">
+			  Thrown by request.Validate() if the destination directory does not exist.
+		  </exception>
+	  </member>
+
+	  <member name="M:AvocadoSmoothie.Barista.CsvBrewService.ExportCsvAsync(System.Collections.Generic.IList{System.Double}, System.String, System.Int32, System.Int32, System.String, System.IProgress{System.Int32}, System.Threading.CancellationToken, AvocadoSmoothie.Barista.SignatureMedian.BoundaryMode)">
+		  <summary>
+			  Core CSV export. Computes MiddleMedian and AllMedian, then writes one or more CSV files with headers and aligned data columns.
+		  </summary>
+		  <param name="initialData">Original numeric data (NaN removed is recommended).</param>
+		  <param name="datasetTitle">Dataset title for headers.</param>
+		  <param name="kernelRadius">Kernel radius R; window size W = (2 × R) + 1 is used for median computations.</param>
+		  <param name="borderCount">Border count for MiddleMedian edges.</param>
+		  <param name="basePath">Target base file path. If partitioning is needed, part index is appended to the file name.</param>
+		  <param name="progress">
+			  Optional progress reporter:
+			  - During Middle / All median calculations: raw processed counts from SignatureMedian (0 … N).
+			  - During file writing: percentage (0 … 100).
+		  </param>
+		  <param name="cancelToken">Optional cancellation token; checked before starting each median computation and between file parts.</param>
+		  <param name="boundaryMode">Boundary handling applied to the AllMedian computation. Written to the CSV header as "Boundary Mode".</param>
+		  <returns>Task producing a List&lt;String&gt; of created CSV file paths (one per part when split is required).</returns>
+		  <remarks>
+			  - Excel row limit is observed (1,048,576). The service subtracts header rows and splits data accordingly.
+			  - HEADER_LINES = 12 (includes a "Boundary Mode" header line).
+			  - Numeric formatting uses "G17" with invariant culture for data lines.
+			  - Header lines include (by row):
+			  1. DatasetTitle
+			  2. Part p of P
+			  3. (blank)
+			  4. "Smoothing Parameters"
+			  5. "Kernel Radius : R"
+			  6. "Kernel Width : W"
+			  7. "Border Count : B"
+			  8. $"Boundary Method : {boundaryMode}"
+			  9. (blank)
+			  10. $"Generated : {DateTime.Now.ToString("G", CurrentCulture)}"
+			  11. (blank)
+			  12. "Initial Data, MiddleMedian, AllMedian"
+		  </remarks>
+		  <exception cref="System.ArgumentException">
+			  Thrown if initialData is empty, datasetTitle is missing, or basePath is missing.
+		  </exception>
+		  <exception cref="System.ArgumentOutOfRangeException">
+			  Thrown if kernelRadius &lt;= 0.
+		  </exception>
+		  <exception cref="System.OperationCanceledException">
+			  Thrown if cancelToken is signaled at designated checkpoints.
+		  </exception>
+		  <exception cref="System.IO.IOException">
+			  Thrown on file I/O errors while creating or writing CSV files.
+		  </exception>
+		  <exception cref="System.UnauthorizedAccessException">
+			  Thrown if the process lacks permission to write to the destination.
+		  </exception>
+		  <exception cref="System.IO.PathTooLongException">
+			  Thrown if the generated path exceeds system limits.
+		  </exception>
+		  <exception cref="System.InvalidOperationException">
+			  Thrown when smoothing parameters are invalid relative to the data (window too large; border too wide).
+		  </exception>
+	  </member>
+
+    <!-- ====================== ExcelOrderTicket ====================== -->
+    <member name="P:AvocadoSmoothie.Barista.ExcelOrderTicket.InitialData">
+      <summary>
+        Original numeric data to be exported to Excel.
+      </summary>
+    </member>
+
+    <member name="P:AvocadoSmoothie.Barista.ExcelOrderTicket.DatasetTitle">
+      <summary>
+        Dataset title (worksheet title and chart title).
+      </summary>
+    </member>
+
+    <member name="P:AvocadoSmoothie.Barista.ExcelOrderTicket.KernelRadius">
+      <summary>
+        Kernel radius R; window size W = (2 × R) + 1.
+      </summary>
+    </member>
+
+	  <member name="P:AvocadoSmoothie.Barista.ExcelOrderTicket.BoundaryMode">
+		  <summary>
+			  Boundary handling to use for AllMedian; shown in the worksheet header. Ignored by MiddleMedian.
+		  </summary>
+	  </member>  
+	  
+    <member name="P:AvocadoSmoothie.Barista.ExcelOrderTicket.BorderCount">
+      <summary>
+        Border count for MiddleMedian edges.
+      </summary>
+    </member>
+
+    <member name="P:AvocadoSmoothie.Barista.ExcelOrderTicket.Progress">
+      <summary>
+        Optional progress reporter for the export operation.
+      </summary>
+    </member>
+
+    <member name="P:AvocadoSmoothie.Barista.ExcelOrderTicket.CancellationToken">
+      <summary>
+        Cancellation token to abort the export operation.
+      </summary>
+    </member>
+
+    <member name="M:AvocadoSmoothie.Barista.ExcelOrderTicket.ValidateBasic">
+      <summary>
+        Validates the basic parameters for Excel export.
+      </summary>
+      <exception cref="System.ArgumentException">
+        Thrown if InitialData is empty or DatasetTitle is missing.
+      </exception>
+      <exception cref="System.ArgumentOutOfRangeException">
+        Thrown if KernelRadius &lt;= 0 or BorderCount &lt; 0.
+      </exception>
+    </member>
+
+    <!-- ====================== ExcelBrewService ====================== -->
+	  <member name="M:AvocadoSmoothie.Barista.ExcelBrewService.ExcelCustomOrder(AvocadoSmoothie.Barista.ExcelOrderTicket)">
+		  <summary>
+			  Validates an ExcelOrderTicket and delegates to ExportExcelAsync with matching parameters.
+		  </summary>
+		  <param name="request">Excel export request containing data and smoothing parameters.</param>
+		  <returns>A Task representing the asynchronous Excel export operation.</returns>
+		  <remarks>
+			  Passes BoundaryMode from the ExcelOrderTicket to the core ExportExcelAsync overload.
+		  </remarks>
+		  <exception cref="System.ArgumentNullException">
+			  Thrown if request is null.
+		  </exception>
+		  <exception cref="System.ArgumentException">
+			  Thrown by request.ValidateBasic() if required fields are missing or invalid.
+		  </exception>
+	  </member>
+
+	  <member name="M:AvocadoSmoothie.Barista.ExcelBrewService.ExportExcelAsync(System.Collections.Generic.IList{System.Double}, System.String, System.Int32, System.Int32, System.IProgress{System.Int32}, System.Threading.CancellationToken, AvocadoSmoothie.Barista.SignatureMedian.BoundaryMode)">
+		  <summary>
+			  Creates an Excel workbook with Initial, MiddleMedian, and AllMedian series and a line chart.
+		  </summary>
+		  <param name="initialData">Original numeric data.</param>
+		  <param name="datasetTitle">Worksheet and chart title.</param>
+		  <param name="kernelRadius">Kernel radius R; window size W = (2 × R) + 1.</param>
+		  <param name="borderCount">Border count for MiddleMedian edges.</param>
+		  <param name="progress">
+			  Optional progress reporter receiving:
+			  - 0 … 29 : MiddleMedian computation
+			  - 30 … 59 : AllMedian computation
+			  - 60 … 100 : Excel writing and finalization
+		  </param>
+		  <param name="cancelToken">Optional cancellation token; observed between processing phases and during small delays.</param>
+		  <param name="boundaryMode">Boundary handling applied to the AllMedian computation. Shown in the sheet header as "Boundary Handling Method".</param>
+		  <returns>A Task representing the asynchronous operation. The generated Excel application window is shown upon completion (on supported platforms).</returns>
+		  <remarks>
+			  - Validates smoothing parameters: window size ≤ data count; border within limits.
+			  - Worksheet header includes:
+			  - Cell(1, 1) : datasetTitle
+			  - Cell(3, 1) : "Smoothing Parameters"
+			  - Cell(4, 1) : $"Kernel Radius : {kernelRadius}"
+			  - Cell(5, 1) : $"Kernel Width : {kernelWidth}"
+			  - Cell(6, 1) : $"Boundary Method : {boundaryMode}"
+			  - Cell(7, 1) : $"Border Count : {borderCount}"
+			  - NET48 : Uses strongly-typed Interop and opens Excel; NETStandard: Uses late binding and requires Windows + Excel installed.
+			  - Note : During the writing phase, progress may report 30 / 60 / 80 / 100 from internal steps; consumers should not assume strictly monotonic percentage mapping.
+		  </remarks>
+		  <exception cref="System.ArgumentException">
+			  Thrown if initialData is empty or datasetTitle is missing.
+		  </exception>
+		  <exception cref="System.ArgumentOutOfRangeException">
+			  Thrown if kernelRadius ≤ 0 or borderCount &lt; 0.
+		  </exception>
+		  <exception cref="System.InvalidOperationException">
+			  Thrown when smoothing parameters violate constraints (e.g., window too large for data, border too wide).
+		  </exception>
+		  <exception cref="System.PlatformNotSupportedException">
+			  Thrown on non-Windows platforms in late-binding mode.
+		  </exception>
+		  <exception cref="AvocadoSmoothie.Barista.ExcelBrewService.ExcelInteropNotAvailableException">
+			  Thrown if Microsoft Excel is not installed or not registered (late-binding path), or if COM activation fails. Also wraps COMException in both NET48 and late-binding paths.
+		  </exception>
+		  <exception cref="System.Runtime.InteropServices.COMException">
+			  Thrown if a late-binding COM operation fails; the message includes a stage hint. (Wrapped as ExcelInteropNotAvailableException.)
+		  </exception>
+		  <exception cref="System.OperationCanceledException">
+			  Thrown if cancelToken is signaled at a cancellation checkpoint.
+		  </exception>
+	  </member>
+  </members>
+</doc>
