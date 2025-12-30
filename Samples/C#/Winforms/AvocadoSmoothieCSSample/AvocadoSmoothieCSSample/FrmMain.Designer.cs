@@ -62,20 +62,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
-            this.label2.Location = new System.Drawing.Point(36, 142);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Location = new System.Drawing.Point(18, 71);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 36);
+            this.label2.Size = new System.Drawing.Size(90, 19);
             this.label2.TabIndex = 53;
             this.label2.Text = "Kernel Radius";
             // 
             // btnExport
             // 
             this.btnExport.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
-            this.btnExport.Location = new System.Drawing.Point(1382, 1096);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnExport.Location = new System.Drawing.Point(691, 548);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(354, 64);
+            this.btnExport.Size = new System.Drawing.Size(177, 32);
             this.btnExport.TabIndex = 50;
             this.btnExport.Text = "Export to Excel";
             this.btnExport.UseVisualStyleBackColor = true;
@@ -84,8 +82,7 @@
             // updRadius
             // 
             this.updRadius.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
-            this.updRadius.Location = new System.Drawing.Point(332, 138);
-            this.updRadius.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.updRadius.Location = new System.Drawing.Point(166, 69);
             this.updRadius.Maximum = new decimal(new int[] {
             13,
             0,
@@ -97,7 +94,7 @@
             0,
             -2147483648});
             this.updRadius.Name = "updRadius";
-            this.updRadius.Size = new System.Drawing.Size(240, 43);
+            this.updRadius.Size = new System.Drawing.Size(120, 25);
             this.updRadius.TabIndex = 48;
             this.updRadius.Value = new decimal(new int[] {
             1,
@@ -112,10 +109,9 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.slblStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 1198);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 597);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 28, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1798, 48);
+            this.statusStrip1.Size = new System.Drawing.Size(899, 24);
             this.statusStrip1.TabIndex = 46;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -124,7 +120,7 @@
             this.slblStatus.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F);
             this.slblStatus.ForeColor = System.Drawing.Color.White;
             this.slblStatus.Name = "slblStatus";
-            this.slblStatus.Size = new System.Drawing.Size(84, 38);
+            this.slblStatus.Size = new System.Drawing.Size(44, 19);
             this.slblStatus.Text = "Ready";
             // 
             // groupBox1
@@ -132,11 +128,9 @@
             this.groupBox1.Controls.Add(this.chkMiddleMedian);
             this.groupBox1.Controls.Add(this.chkAllMedian);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(76, 122);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Location = new System.Drawing.Point(38, 61);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.groupBox1.Size = new System.Drawing.Size(608, 458);
+            this.groupBox1.Size = new System.Drawing.Size(304, 229);
             this.groupBox1.TabIndex = 45;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Smoothing Methods";
@@ -145,10 +139,9 @@
             // 
             this.chkMiddleMedian.AutoSize = true;
             this.chkMiddleMedian.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
-            this.chkMiddleMedian.Location = new System.Drawing.Point(188, 234);
-            this.chkMiddleMedian.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.chkMiddleMedian.Location = new System.Drawing.Point(94, 117);
             this.chkMiddleMedian.Name = "chkMiddleMedian";
-            this.chkMiddleMedian.Size = new System.Drawing.Size(223, 40);
+            this.chkMiddleMedian.Size = new System.Drawing.Size(117, 23);
             this.chkMiddleMedian.TabIndex = 1;
             this.chkMiddleMedian.Text = "Middle Median";
             this.chkMiddleMedian.UseVisualStyleBackColor = true;
@@ -158,10 +151,9 @@
             // 
             this.chkAllMedian.AutoSize = true;
             this.chkAllMedian.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
-            this.chkAllMedian.Location = new System.Drawing.Point(188, 176);
-            this.chkAllMedian.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.chkAllMedian.Location = new System.Drawing.Point(94, 88);
             this.chkAllMedian.Name = "chkAllMedian";
-            this.chkAllMedian.Size = new System.Drawing.Size(170, 40);
+            this.chkAllMedian.Size = new System.Drawing.Size(91, 23);
             this.chkAllMedian.TabIndex = 0;
             this.chkAllMedian.Text = "All Median";
             this.chkAllMedian.UseVisualStyleBackColor = true;
@@ -170,21 +162,19 @@
             // txtInit
             // 
             this.txtInit.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInit.Location = new System.Drawing.Point(12, 56);
-            this.txtInit.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtInit.Location = new System.Drawing.Point(6, 28);
             this.txtInit.Multiline = true;
             this.txtInit.Name = "txtInit";
             this.txtInit.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtInit.Size = new System.Drawing.Size(976, 376);
+            this.txtInit.Size = new System.Drawing.Size(490, 190);
             this.txtInit.TabIndex = 43;
             // 
             // btnStart
             // 
             this.btnStart.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
-            this.btnStart.Location = new System.Drawing.Point(76, 1096);
-            this.btnStart.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnStart.Location = new System.Drawing.Point(38, 548);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(608, 64);
+            this.btnStart.Size = new System.Drawing.Size(304, 32);
             this.btnStart.TabIndex = 42;
             this.btnStart.Text = "Start Smoothing";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -194,18 +184,16 @@
             // 
             this.lblBorderCnt.AutoSize = true;
             this.lblBorderCnt.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
-            this.lblBorderCnt.Location = new System.Drawing.Point(36, 208);
-            this.lblBorderCnt.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblBorderCnt.Location = new System.Drawing.Point(18, 104);
             this.lblBorderCnt.Name = "lblBorderCnt";
-            this.lblBorderCnt.Size = new System.Drawing.Size(177, 36);
+            this.lblBorderCnt.Size = new System.Drawing.Size(92, 19);
             this.lblBorderCnt.TabIndex = 55;
             this.lblBorderCnt.Text = "Border Count";
             // 
             // updBorderCnt
             // 
             this.updBorderCnt.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
-            this.updBorderCnt.Location = new System.Drawing.Point(332, 204);
-            this.updBorderCnt.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.updBorderCnt.Location = new System.Drawing.Point(166, 102);
             this.updBorderCnt.Maximum = new decimal(new int[] {
             13,
             0,
@@ -217,7 +205,7 @@
             0,
             -2147483648});
             this.updBorderCnt.Name = "updBorderCnt";
-            this.updBorderCnt.Size = new System.Drawing.Size(240, 43);
+            this.updBorderCnt.Size = new System.Drawing.Size(120, 25);
             this.updBorderCnt.TabIndex = 54;
             this.updBorderCnt.Value = new decimal(new int[] {
             1,
@@ -228,10 +216,9 @@
             // btnCSVExport
             // 
             this.btnCSVExport.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
-            this.btnCSVExport.Location = new System.Drawing.Point(1016, 1096);
-            this.btnCSVExport.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnCSVExport.Location = new System.Drawing.Point(508, 548);
             this.btnCSVExport.Name = "btnCSVExport";
-            this.btnCSVExport.Size = new System.Drawing.Size(354, 64);
+            this.btnCSVExport.Size = new System.Drawing.Size(177, 32);
             this.btnCSVExport.TabIndex = 56;
             this.btnCSVExport.Text = "Export to CSV";
             this.btnCSVExport.UseVisualStyleBackColor = true;
@@ -246,11 +233,9 @@
             this.groupBox2.Controls.Add(this.lblBorderCnt);
             this.groupBox2.Controls.Add(this.updBorderCnt);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F);
-            this.groupBox2.Location = new System.Drawing.Point(76, 606);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox2.Location = new System.Drawing.Point(38, 303);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.groupBox2.Size = new System.Drawing.Size(608, 458);
+            this.groupBox2.Size = new System.Drawing.Size(304, 229);
             this.groupBox2.TabIndex = 57;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Smoothing Parameters";
@@ -259,10 +244,9 @@
             // 
             this.lblBoundaryMode.AutoSize = true;
             this.lblBoundaryMode.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
-            this.lblBoundaryMode.Location = new System.Drawing.Point(36, 274);
-            this.lblBoundaryMode.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblBoundaryMode.Location = new System.Drawing.Point(18, 137);
             this.lblBoundaryMode.Name = "lblBoundaryMode";
-            this.lblBoundaryMode.Size = new System.Drawing.Size(253, 36);
+            this.lblBoundaryMode.Size = new System.Drawing.Size(132, 19);
             this.lblBoundaryMode.TabIndex = 57;
             this.lblBoundaryMode.Text = "Boundary Handling :";
             // 
@@ -275,21 +259,18 @@
             "Adaptive",
             "Replicate",
             "ZeroPad"});
-            this.cbxBoundaryMode.Location = new System.Drawing.Point(332, 270);
-            this.cbxBoundaryMode.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cbxBoundaryMode.Location = new System.Drawing.Point(166, 135);
             this.cbxBoundaryMode.Name = "cbxBoundaryMode";
-            this.cbxBoundaryMode.Size = new System.Drawing.Size(236, 44);
+            this.cbxBoundaryMode.Size = new System.Drawing.Size(120, 25);
             this.cbxBoundaryMode.TabIndex = 56;
             // 
             // gbInitData
             // 
             this.gbInitData.Controls.Add(this.txtInit);
             this.gbInitData.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbInitData.Location = new System.Drawing.Point(732, 122);
-            this.gbInitData.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gbInitData.Location = new System.Drawing.Point(366, 61);
             this.gbInitData.Name = "gbInitData";
-            this.gbInitData.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.gbInitData.Size = new System.Drawing.Size(1004, 458);
+            this.gbInitData.Size = new System.Drawing.Size(502, 229);
             this.gbInitData.TabIndex = 58;
             this.gbInitData.TabStop = false;
             this.gbInitData.Text = "Initial Data";
@@ -298,11 +279,9 @@
             // 
             this.gbRefData.Controls.Add(this.txtRefined);
             this.gbRefData.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbRefData.Location = new System.Drawing.Point(732, 606);
-            this.gbRefData.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gbRefData.Location = new System.Drawing.Point(366, 303);
             this.gbRefData.Name = "gbRefData";
-            this.gbRefData.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.gbRefData.Size = new System.Drawing.Size(1004, 458);
+            this.gbRefData.Size = new System.Drawing.Size(502, 229);
             this.gbRefData.TabIndex = 59;
             this.gbRefData.TabStop = false;
             this.gbRefData.Text = "Refined Data";
@@ -310,32 +289,30 @@
             // txtRefined
             // 
             this.txtRefined.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRefined.Location = new System.Drawing.Point(12, 56);
-            this.txtRefined.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtRefined.Location = new System.Drawing.Point(6, 28);
             this.txtRefined.Multiline = true;
             this.txtRefined.Name = "txtRefined";
             this.txtRefined.ReadOnly = true;
             this.txtRefined.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtRefined.Size = new System.Drawing.Size(976, 376);
+            this.txtRefined.Size = new System.Drawing.Size(490, 190);
             this.txtRefined.TabIndex = 45;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 17F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.Location = new System.Drawing.Point(62, 28);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblTitle.Location = new System.Drawing.Point(31, 14);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(723, 62);
+            this.lblTitle.Size = new System.Drawing.Size(365, 31);
             this.lblTitle.TabIndex = 60;
             this.lblTitle.Text = "AvocadoSmoothie.Barista.Tasting";
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1798, 1246);
+            this.ClientSize = new System.Drawing.Size(899, 621);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.gbRefData);
             this.Controls.Add(this.gbInitData);
@@ -347,7 +324,6 @@
             this.Controls.Add(this.btnStart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
