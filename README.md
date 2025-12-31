@@ -16,6 +16,14 @@ This project is designed as that space for **AvocadoSmoothie.Barista** - a pract
 
 Step into the tasting room, refine your technique, and ship your own full-scale application with a barista's certainty.
 
+<br>
+<div align="center">
+<img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/happybono/AvocadoSmoothie.Barista.Tasting"> 
+<img alt="GitHub Repo Size" src="https://img.shields.io/github/repo-size/happybono/AvocadoSmoothie.Barista.Tasting">
+<img alt="GitHub Repo Languages" src="https://img.shields.io/github/languages/count/happybono/AvocadoSmoothie.Barista.Tasting">
+<img alt="GitHub Top Languages" src="https://img.shields.io/github/languages/top/happybono/AvocadoSmoothie.Barista.Tasting">
+<img alt="Nuget Downloads" src="https://img.shields.io/nuget/dt/SonataSmooth.Tune?logo=NuGet&link=https%3A%2F%2Fwww.nuget.org%2Fpackages%2FAvocadoSmoothie.Barista.Tasting">
+</div><br>
 
 ## What's New
 ### v1.0.0.0
@@ -139,6 +147,7 @@ Add a reference to `AvocadoSmoothie.Barista` in your .NET Framework 4.8 project.
 
 **AvocadoSmoothie.Barista** : Brew clarity from noisy data.  
 **AvocadoSmoothie.Barista.Tasting** : Taste, iterate, and dial in (fine-tune) your recipe.
+
 
 
 
