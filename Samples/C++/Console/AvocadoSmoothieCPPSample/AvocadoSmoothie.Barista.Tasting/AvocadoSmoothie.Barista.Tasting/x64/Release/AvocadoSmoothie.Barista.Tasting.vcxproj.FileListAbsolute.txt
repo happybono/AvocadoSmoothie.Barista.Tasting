@@ -1,0 +1,2 @@
+E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\x64\Release\AvocadoSmoothie.Barista.Tasting.vcxproj.AssemblyReference.cache
+E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\x64\Release\AvocadoS.B6B909ED.Up2Date
