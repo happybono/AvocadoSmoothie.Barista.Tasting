@@ -1,0 +1,115 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly AvocadoSmoothie.Barista, Version=4.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51: 
+	hash=None, flags=None
+Class AvocadoSmoothie.Barista.CsvBrewService: AutoLayout, AnsiClass, Class, Public, Sealed
+  Methods:
+    ExportCsvAsync(IList`1, String, Int32, Int32, String, IProgress`1(Optional, HasDefault), CancellationToken(Optional, HasDefault), BoundaryMode(Optional, HasDefault)): PrivateScope, Public, Static
+    ExportCsvAsync(CsvOrderTicket): PrivateScope, Public, Static
+Class AvocadoSmoothie.Barista.CsvOrderTicket: AutoLayout, AnsiClass, Class, Public
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Properties:
+    System.Collections.Generic.IList`1[System.Double] InitialData 'get set' : 
+    System.String DatasetTitle 'get set' : 
+    Int32 KernelRadius 'get set' : 
+    Int32 BorderCount 'get set' : 
+    System.String BasePath 'get set' : 
+    System.Threading.CancellationToken CancellationToken 'get set' : 
+    System.IProgress`1[System.Int32] Progress 'get set' : 
+    BoundaryMode BoundaryMode 'get set' : 
+  Methods:
+    get_InitialData(): PrivateScope, Public, SpecialName
+    set_InitialData(IList`1): PrivateScope, Public, SpecialName
+    get_DatasetTitle(): PrivateScope, Public, SpecialName
+    set_DatasetTitle(String): PrivateScope, Public, SpecialName
+    get_KernelRadius(): PrivateScope, Public, SpecialName
+    set_KernelRadius(Int32): PrivateScope, Public, SpecialName
+    get_BorderCount(): PrivateScope, Public, SpecialName
+    set_BorderCount(Int32): PrivateScope, Public, SpecialName
+    get_BasePath(): PrivateScope, Public, SpecialName
+    set_BasePath(String): PrivateScope, Public, SpecialName
+    get_CancellationToken(): PrivateScope, Public, SpecialName
+    set_CancellationToken(CancellationToken): PrivateScope, Public, SpecialName
+    get_Progress(): PrivateScope, Public, SpecialName
+    set_Progress(IProgress`1): PrivateScope, Public, SpecialName
+    get_BoundaryMode(): PrivateScope, Public, SpecialName
+    set_BoundaryMode(BoundaryMode): PrivateScope, Public, SpecialName
+    Validate(): PrivateScope, Public
+Class AvocadoSmoothie.Barista.ExcelBrewService: AutoLayout, AnsiClass, Class, Public, Sealed
+  Methods:
+    ExportExcelAsync(IList`1, String, Int32, Int32, IProgress`1, CancellationToken(Optional, HasDefault), BoundaryMode(Optional, HasDefault)): PrivateScope, Public, Static
+    ExcelCustomOrder(ExcelOrderTicket): PrivateScope, Public, Static
+Class AvocadoSmoothie.Barista.ExcelOrderTicket: AutoLayout, AnsiClass, Class, Public
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Properties:
+    System.Collections.Generic.IList`1[System.Double] InitialData 'get set' : 
+    System.String DatasetTitle 'get set' : 
+    Int32 KernelRadius 'get set' : 
+    Int32 BorderCount 'get set' : 
+    System.IProgress`1[System.Int32] Progress 'get set' : 
+    System.Threading.CancellationToken CancellationToken 'get set' : 
+    BoundaryMode BoundaryMode 'get set' : 
+  Methods:
+    get_InitialData(): PrivateScope, Public, SpecialName
+    set_InitialData(IList`1): PrivateScope, Public, SpecialName
+    get_DatasetTitle(): PrivateScope, Public, SpecialName
+    set_DatasetTitle(String): PrivateScope, Public, SpecialName
+    get_KernelRadius(): PrivateScope, Public, SpecialName
+    set_KernelRadius(Int32): PrivateScope, Public, SpecialName
+    get_BorderCount(): PrivateScope, Public, SpecialName
+    set_BorderCount(Int32): PrivateScope, Public, SpecialName
+    get_Progress(): PrivateScope, Public, SpecialName
+    set_Progress(IProgress`1): PrivateScope, Public, SpecialName
+    get_CancellationToken(): PrivateScope, Public, SpecialName
+    set_CancellationToken(CancellationToken): PrivateScope, Public, SpecialName
+    get_BoundaryMode(): PrivateScope, Public, SpecialName
+    set_BoundaryMode(BoundaryMode): PrivateScope, Public, SpecialName
+    ValidateBasic(): PrivateScope, Public
+Class AvocadoSmoothie.Barista.IngredientRatioValidator: AutoLayout, AnsiClass, Class, Public, Sealed
+  Fields:
+    System.String MsgNoData = No data to export. : Public, Static, Literal, HasDefault
+    System.String MsgDatasetTitleRequired = Dataset title is required. : Public, Static, Literal, HasDefault
+    System.String MsgKernelRadiusPositive = Kernel radius must be > 0. : Public, Static, Literal, HasDefault
+    System.String MsgBorderCountNonNegative = Border count cannot be negative. : Public, Static, Literal, HasDefault
+    System.String MsgBasePathRequired = Base path is required. : Public, Static, Literal, HasDefault
+  Methods:
+    BuildParamErrorWindowTooLarge(Int32, Int32, Int32): PrivateScope, Public, Static
+    BuildParamErrorBorderTooLarge(Int32, Int32): PrivateScope, Public, Static
+    BuildParamErrorBorderWidth(Int32, Int32): PrivateScope, Public, Static
+    ThrowIfInvalidBasicForExcel(IList`1, String, Int32, Int32): PrivateScope, Public, Static
+    ThrowIfInvalidBasicForCsv(IList`1, String, Int32, Int32, String): PrivateScope, Public, Static
+    ThrowIfInvalidSmoothingParameters(Int32, Int32, Int32, Int32, Boolean): PrivateScope, Public, Static
+    KernelWidthFromRadius(Int32): PrivateScope, Public, Static
+Class AvocadoSmoothie.Barista.SignatureMedian: AutoLayout, AnsiClass, Class, Public
+    Void .ctor(): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    ComputeMediansByRadius(List`1, Boolean, Int32, Int32, IProgress`1(Optional, HasDefault), BoundaryMode(Optional, HasDefault)): PrivateScope, Public, Static
+    ComputeMedians(List`1, Boolean, Int32, Int32, IProgress`1(Optional, HasDefault), BoundaryMode(Optional, HasDefault)): PrivateScope, Public, Static
+Struct AvocadoSmoothie.Barista.ExcelBrewService+ExcelInteropUnavailableReason: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    ExcelInteropUnavailableReason Unknown = 0 : Public, Static, Literal, HasDefault
+    ExcelInteropUnavailableReason NotInstalled = 1 : Public, Static, Literal, HasDefault
+    ExcelInteropUnavailableReason ClassNotRegistered = 2 : Public, Static, Literal, HasDefault
+    ExcelInteropUnavailableReason ActivationFailed = 3 : Public, Static, Literal, HasDefault
+    ExcelInteropUnavailableReason PlatformNotSupported = 4 : Public, Static, Literal, HasDefault
+Class AvocadoSmoothie.Barista.ExcelBrewService+ExcelInteropNotAvailableException: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, Serializable
+  :System.Exception
+    Void .ctor(System.String, ExcelInteropUnavailableReason, System.Exception): PrivateScope, Public, SpecialName, RTSpecialName
+  Properties:
+    ExcelInteropUnavailableReason Reason 'get ' : 
+  Methods:
+    get_Reason(): PrivateScope, Public, SpecialName
+Class AvocadoSmoothie.Barista.IngredientRatioValidator+MessageOnceGate: AutoLayout, AnsiClass, Class, NestedPublic, Sealed, BeforeFieldInit
+  Methods:
+    TryEnter(String, Int32(Optional, HasDefault)): PrivateScope, Public, Static
+Struct AvocadoSmoothie.Barista.SignatureMedian+BoundaryMode: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    BoundaryMode Symmetric = 0 : Public, Static, Literal, HasDefault
+    BoundaryMode Replicate = 1 : Public, Static, Literal, HasDefault
+    BoundaryMode ZeroPad = 2 : Public, Static, Literal, HasDefault
+    BoundaryMode Adaptive = 3 : Public, Static, Literal, HasDefault

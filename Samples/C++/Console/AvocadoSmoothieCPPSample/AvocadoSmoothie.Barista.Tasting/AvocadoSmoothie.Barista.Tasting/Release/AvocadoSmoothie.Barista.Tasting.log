@@ -1,0 +1,53 @@
+﻿  pch.cpp
+  AssemblyInfo.cpp
+  AvocadoSmoothie.Barista.Tasting.cpp
+E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting.cpp(87,38): warning C4691: 'System::Object': type referenced was expected in unreferenced assembly 'netstandard', type defined in current translation unit used instead
+  (compiling source file '/AvocadoSmoothie.Barista.Tasting.cpp')
+      E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting.cpp(87,38):
+      This diagnostic occurred while importing type 'AvocadoSmoothie::Barista::SignatureMedian' from assembly 'AvocadoSmoothie.Barista, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null'.
+  
+E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting.cpp(87,38): warning C4691: 'System::Collections::Generic::List': type referenced was expected in unreferenced assembly 'netstandard', type defined in current translation unit used instead
+  (compiling source file '/AvocadoSmoothie.Barista.Tasting.cpp')
+      E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting.cpp(87,38):
+      This diagnostic occurred while importing type 'AvocadoSmoothie::Barista::SignatureMedian' from assembly 'AvocadoSmoothie.Barista, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null'.
+  
+E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting.cpp(87,38): warning C4691: 'System::IProgress': type referenced was expected in unreferenced assembly 'netstandard', type defined in current translation unit used instead
+  (compiling source file '/AvocadoSmoothie.Barista.Tasting.cpp')
+      E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting.cpp(87,38):
+      This diagnostic occurred while importing type 'AvocadoSmoothie::Barista::SignatureMedian' from assembly 'AvocadoSmoothie.Barista, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null'.
+  
+E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting.cpp(182,55): warning C4691: 'System::Object': type referenced was expected in unreferenced assembly 'netstandard', type defined in current translation unit used instead
+  (compiling source file '/AvocadoSmoothie.Barista.Tasting.cpp')
+      E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting.cpp(182,55):
+      This diagnostic occurred while importing type 'AvocadoSmoothie::Barista::CsvBrewService' from assembly 'AvocadoSmoothie.Barista, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null'.
+  
+E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting.cpp(182,55): warning C4691: 'System::Threading::Tasks::Task': type referenced was expected in unreferenced assembly 'netstandard', type defined in current translation unit used instead
+  (compiling source file '/AvocadoSmoothie.Barista.Tasting.cpp')
+      E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting.cpp(182,55):
+      This diagnostic occurred while importing type 'AvocadoSmoothie::Barista::CsvBrewService' from assembly 'AvocadoSmoothie.Barista, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null'.
+  
+E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting.cpp(182,55): warning C4691: 'System::Collections::Generic::List': type referenced was expected in unreferenced assembly 'netstandard', type defined in current translation unit used instead
+  (compiling source file '/AvocadoSmoothie.Barista.Tasting.cpp')
+      E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting.cpp(182,55):
+      This diagnostic occurred while importing type 'AvocadoSmoothie::Barista::CsvBrewService' from assembly 'AvocadoSmoothie.Barista, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null'.
+  
+E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting.cpp(182,55): warning C4691: 'System::Collections::Generic::IList': type referenced was expected in unreferenced assembly 'netstandard', type defined in current translation unit used instead
+  (compiling source file '/AvocadoSmoothie.Barista.Tasting.cpp')
+      E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting.cpp(182,55):
+      This diagnostic occurred while importing type 'AvocadoSmoothie::Barista::CsvBrewService' from assembly 'AvocadoSmoothie.Barista, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null'.
+  
+E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting.cpp(182,55): warning C4691: 'System::IProgress': type referenced was expected in unreferenced assembly 'netstandard', type defined in current translation unit used instead
+  (compiling source file '/AvocadoSmoothie.Barista.Tasting.cpp')
+      E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting.cpp(182,55):
+      This diagnostic occurred while importing type 'AvocadoSmoothie::Barista::CsvBrewService' from assembly 'AvocadoSmoothie.Barista, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null'.
+  
+E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting.cpp(182,55): warning C4691: 'System::Threading::CancellationToken': type referenced was expected in unreferenced assembly 'netstandard', type defined in current translation unit used instead
+  (compiling source file '/AvocadoSmoothie.Barista.Tasting.cpp')
+      E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting\AvocadoSmoothie.Barista.Tasting.cpp(182,55):
+      This diagnostic occurred while importing type 'AvocadoSmoothie::Barista::CsvBrewService' from assembly 'AvocadoSmoothie.Barista, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null'.
+  
+  main.cpp
+  Generating Code...
+  .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
+  AssemblyInfo.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  AvocadoSmoothie.Barista.Tasting.vcxproj -> E:\My Lifestyle\Products\VB.NET\AvocadoSmoothieSamples\Samples\C++\Console\AvocadoSmoothieCPPSample\AvocadoSmoothie.Barista.Tasting\Release\AvocadoSmoothie.Barista.Tasting.exe
