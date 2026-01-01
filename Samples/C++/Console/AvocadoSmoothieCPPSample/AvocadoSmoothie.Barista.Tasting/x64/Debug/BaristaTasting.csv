@@ -1,0 +1,30 @@
+﻿AvocadoSmoothie Barista Tasting
+Part 1 of 1
+
+Smoothing Parameters
+Kernel Radius : 4
+Kernel Width : 9
+Boundary Method : Adaptive
+Border Count : 4
+
+Generated : 1/1/2026 10:16:05 AM
+
+Initial Data,Middle Median,All Median
+4,4,5
+3,3,5
+6,6,5
+5,5,5
+7,5,5
+5,5,5
+4,6,6
+3,5,5
+6,5,5
+8,5,5
+9,4,4
+4,4,4
+3,6,6
+100,4,4
+3,3,4
+4,4,4
+6,6,4
+3,3,4
