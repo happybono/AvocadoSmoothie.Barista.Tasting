@@ -148,6 +148,13 @@ Add a reference to `AvocadoSmoothie.Barista` in your .NET Framework 4.8 project.
 **AvocadoSmoothie.Barista** : Brew clarity from noisy data.  
 **AvocadoSmoothie.Barista.Tasting** : Taste, iterate, and dial in (fine-tune) your recipe.
 
+## License
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## Copyright 
+Copyright ⓒ HappyBono 2022 - 2026. All Rights Reserved.
+
+
 
 
 
