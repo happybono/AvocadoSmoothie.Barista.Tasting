@@ -152,10 +152,4 @@ Add a reference to `AvocadoSmoothie.Barista` in your .NET Framework 4.8 project.
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ## Copyright 
-Copyright ⓒ HappyBono 2022 - 2026. All Rights Reserved.
-
-
-
-
-
-
+Copyright ⓒ HappyBono 2025 - 2026. All Rights Reserved.
