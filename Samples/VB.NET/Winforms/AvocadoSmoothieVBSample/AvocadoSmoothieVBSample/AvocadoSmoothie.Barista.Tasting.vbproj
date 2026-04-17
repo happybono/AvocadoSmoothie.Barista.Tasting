@@ -76,8 +76,8 @@
     </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AvocadoSmoothie.Barista, Version=4.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AvocadoSmoothie.Barista.4.0.1\lib\netstandard2.0\AvocadoSmoothie.Barista.dll</HintPath>
+    <Reference Include="AvocadoSmoothie.Barista, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AvocadoSmoothie.Barista.4.1.0\lib\netstandard2.0\AvocadoSmoothie.Barista.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.16.0.18925.20022\lib\net40\Microsoft.Office.Interop.Excel.dll</HintPath>
