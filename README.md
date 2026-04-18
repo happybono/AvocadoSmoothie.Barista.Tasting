@@ -30,6 +30,9 @@ Step into the tasting room, refine your technique, and ship your own full-scale 
 #### December 30, 2025
 > Initial release.
 
+#### April 17, 2026
+> Updated sample code dependencies to the latest package versions.
+
 ## How to Use AvocadoSmoothie.Barista (with Tasting Sample)
 
 This section describes how to use the AvocadoSmoothie.Barista library, as demonstrated in the `AvocadoSmoothie.Barista.Tasting` sample application (`frmMain.cs` and `frmMain.Designer.cs`).
